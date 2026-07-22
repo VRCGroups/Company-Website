@@ -5,9 +5,9 @@ import { Reveal, SectionHeader, GradientButton, Blobs, GlassCard } from "../../c
 export const Route = createFileRoute("/_authenticated/about")({
   head: () => ({
     meta: [
-      { title: "About — VRC Innovations" },
-      { name: "description", content: "Learn about VRC Innovations — a research-driven technology company building AI, software, IoT, and automation solutions." },
-      { property: "og:title", content: "About VRC Innovations" },
+      { title: "About — VRC Groups" },
+      { name: "description", content: "Learn about VRC Groups — a research-driven technology company building AI, software, IoT, and automation solutions." },
+      { property: "og:title", content: "About VRC Groups" },
       { property: "og:description", content: "A research-driven technology company." },
     ],
   }),
@@ -35,7 +35,7 @@ function About() {
               We build <span className="text-gradient">intelligent technology</span> for a smarter tomorrow
             </h1>
             <p className="mt-6 text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              VRC Innovations is a next-generation technology company delivering software, AI, IoT, and automation solutions — powered by rigorous research, design excellence, and enterprise engineering discipline.
+              VRC Groups is a next-generation technology company delivering software, AI, IoT, and automation solutions — powered by rigorous research, design excellence, and enterprise engineering discipline.
             </p>
           </Reveal>
         </div>

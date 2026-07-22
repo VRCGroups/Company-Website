@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Github, Linkedin, Twitter, Instagram, Mail, MapPin, Phone } from "lucide-react";
+import { Linkedin,Instagram, Mail, MapPin, Phone } from "lucide-react";
 
 export function Footer() {
   return (
@@ -8,13 +8,13 @@ export function Footer() {
         <div>
           <div className="flex items-center gap-2 mb-4">
             <div className="h-9 w-9 rounded-xl bg-[var(--gradient-brand)] grid place-items-center text-white font-bold">V</div>
-            <span className="font-bold text-lg">VRC <span className="text-gradient">Innovations</span></span>
+            <span className="font-bold text-lg">VRC <span className="text-gradient">Groups</span></span>
           </div>
           <p className="text-sm text-muted-foreground leading-relaxed">
             Building future-ready technology for real-world innovation.
           </p>
           <div className="flex gap-3 mt-5">
-            {[Linkedin, Twitter, Github, Instagram].map((Icon, i) => (
+            {[Linkedin, Instagram].map((Icon, i) => (
               <a key={i} href="#" className="h-9 w-9 grid place-items-center rounded-lg glass hover:text-[#34d5ff] hover:border-[#34d5ff]/40 transition-all">
                 <Icon size={16} />
               </a>
@@ -47,7 +47,7 @@ export function Footer() {
           <ul className="space-y-3 text-sm text-muted-foreground">
             <li className="flex gap-2"><MapPin size={16} className="text-[#34d5ff] shrink-0 mt-0.5" /> Vizag,Andhra Pradesh, India</li>
             <li className="flex gap-2"><Phone size={16} className="text-[#34d5ff] shrink-0 mt-0.5" /> +91 9392420643</li>
-            <li className="flex gap-2"><Mail size={16} className="text-[#34d5ff] shrink-0 mt-0.5" /> welcome@vrcpvtltd .com</li>
+            <li className="flex gap-2"><Mail size={16} className="text-[#34d5ff] shrink-0 mt-0.5" /> welcome@vrcpvtltd.com</li>
           </ul>
         </div>
       </div>

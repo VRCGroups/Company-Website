@@ -42,7 +42,7 @@ export function Nav() {
             </div>
 
             <span className="font-bold text-lg tracking-tight">
-              VRC <span className="text-gradient">Innovations</span>
+              VRC <span className="text-gradient">Groups</span>
             </span>
           </Link>
 
@@ -64,13 +64,7 @@ export function Nav() {
             ))}
           </nav>
 
-          {/* Get Started Button */}
-          <Link
-            to="/contact"
-            className="hidden md:inline-flex btn-gradient items-center gap-2 rounded-full px-5 py-2 text-sm font-semibold"
-          >
-            Get Started
-          </Link>
+          
 
           {/* Mobile Menu Button */}
           <button

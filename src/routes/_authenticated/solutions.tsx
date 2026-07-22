@@ -325,43 +325,64 @@ function Solutions() {
   </div>
 </motion.div>
 {/* Feature cards */}
-<div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-  {suciFeatures.map((f, i) => (
-    <motion.div
-      key={f.title}
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{
-        duration: 0.6,
-        delay: i * 0.1,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-      whileHover={{ scale: 1.05, y: -6 }}
-      className="group relative"
-    >
-      <div className="absolute -inset-[1px] rounded-2xl bg-[var(--gradient-brand)] opacity-30 blur-[2px] group-hover:opacity-80 transition-opacity duration-500" />
+<div className="mt-20">
 
-      <div className="relative glass-strong rounded-2xl p-6 h-full overflow-hidden">
-
-        <div className="absolute -top-16 -right-16 h-32 w-32 rounded-full bg-[#34d5ff]/15 blur-2xl group-hover:bg-[#8b5cf6]/30 transition-colors duration-700" />
-
-        <div className="relative flex items-center gap-3 mb-3">
-          <span className="text-2xl">{f.emoji}</span>
-          <f.icon size={20} className="text-[#34d5ff]" />
-        </div>
-
-        <h5 className="relative font-semibold text-base mb-2">
-          {f.title}
-        </h5>
-
-        <p className="relative text-sm text-muted-foreground leading-relaxed">
-          {f.desc}
-        </p>
-
+  <Reveal>
+    <div className="text-center mb-12">
+      <div className="text-xs uppercase tracking-widest text-[#34d5ff] mb-2">
+        SUCI Homes
       </div>
-    </motion.div>
-  ))}
+
+      <h3 className="text-4xl md:text-5xl font-bold">
+        What <span className="text-gradient">We Offer</span>
+      </h3>
+
+      <p className="mt-4 max-w-2xl mx-auto text-muted-foreground leading-relaxed">
+        Discover our complete range of professional cleaning and maintenance
+        services designed to create healthier, cleaner, and more comfortable
+        living spaces for homes and businesses.
+      </p>
+    </div>
+  </Reveal>
+
+  <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    {suciFeatures.map((f, i) => (
+      <motion.div
+        key={f.title}
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{
+          duration: 0.6,
+          delay: i * 0.1,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+        whileHover={{ scale: 1.05, y: -8 }}
+        className="group relative"
+      >
+        <div className="absolute -inset-[1px] rounded-3xl bg-[var(--gradient-brand)] opacity-30 blur-[2px] group-hover:opacity-80 transition-opacity duration-500" />
+
+        <div className="relative glass-strong rounded-3xl p-7 h-full overflow-hidden">
+
+          <div className="absolute -top-20 -right-20 h-40 w-40 rounded-full bg-[#34d5ff]/20 blur-3xl group-hover:bg-[#8b5cf6]/30 transition-colors duration-700" />
+
+          <div className="flex items-center gap-3 mb-5">
+            <span className="text-3xl">{f.emoji}</span>
+            <f.icon size={24} className="text-[#34d5ff]" />
+          </div>
+
+          <h4 className="text-lg font-semibold mb-3">
+            {f.title}
+          </h4>
+
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            {f.desc}
+          </p>
+        </div>
+      </motion.div>
+    ))}
+  </div>
+
 </div>
  
 </div>

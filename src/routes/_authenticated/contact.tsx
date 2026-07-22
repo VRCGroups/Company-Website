@@ -3,13 +3,14 @@ import { useState, type FormEvent } from "react";
 import { MapPin, Phone, Mail, Send, ArrowRight, CheckCircle2 } from "lucide-react";
 import { Reveal, Blobs } from "../../components/ui";
 import { supabase } from "@/integrations/supabase/client";
+import { Footer } from "../../components/Footer";
 
 export const Route = createFileRoute("/_authenticated/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — VRC Innovations" },
-      { name: "description", content: "Get in touch with VRC Innovations. We'd love to hear about your project." },
-      { property: "og:title", content: "Contact VRC Innovations" },
+      { title: "Contact — VRC Groups" },
+      { name: "description", content: "Get in touch with VRC Groups. We'd love to hear about your project." },
+      { property: "og:title", content: "Contact VRC Groups" },
       { property: "og:description", content: "Reach out to start your next technology project." },
     ],
   }),
@@ -183,6 +184,7 @@ function Contact() {
           </div>
         </div>
       </section>
+       <Footer />
     </div>
   );
 }
