@@ -14,12 +14,24 @@ export function Footer() {
             Building future-ready technology for real-world innovation.
           </p>
           <div className="flex gap-3 mt-5">
-            {[Linkedin, Instagram].map((Icon, i) => (
-              <a key={i} href="#" className="h-9 w-9 grid place-items-center rounded-lg glass hover:text-[#34d5ff] hover:border-[#34d5ff]/40 transition-all">
-                <Icon size={16} />
-              </a>
-            ))}
-          </div>
+  <a
+    href="https://www.linkedin.com/groups/14706038"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="h-9 w-9 grid place-items-center rounded-lg glass hover:text-[#34d5ff] hover:border-[#34d5ff]/40 transition-all"
+  >
+    <Linkedin size={16} />
+  </a>
+
+  <a
+   href="https://www.instagram.com/vrc_innovations/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="h-9 w-9 grid place-items-center rounded-lg glass hover:text-[#34d5ff] hover:border-[#34d5ff]/40 transition-all"
+  >
+    <Instagram size={16} />
+  </a>
+</div>
         </div>
 
         <div>
