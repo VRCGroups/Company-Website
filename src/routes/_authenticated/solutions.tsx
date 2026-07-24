@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { Reveal, GradientButton, Blobs } from "../../components/ui";
-import suciBuilding from "@/assets/suchi-homes.jpg";
+import suchiBuilding from "@/assets/suchi-homes.jpg";
 
 export const Route = createFileRoute("/_authenticated/solutions")({
   head: () => ({
@@ -42,31 +42,11 @@ const futureMinds: Item[] = [
 ];
 
 
-const suciFeatures = [
-  {
-    icon: Home,
-    emoji: "🏠",
-    title: "Home Cleaning",
-    desc: "Professional cleaning services for apartments, villas, and independent houses.",
-  },
-  {
-    icon: Leaf,
-    emoji: "🧹",
-    title: "Deep Cleaning",
-    desc: "Complete deep cleaning solutions using modern equipment and eco-friendly products.",
-  },
-  {
-    icon: Star,
-    emoji: "⭐",
-    title: "Trusted Professionals",
-    desc: "Experienced, trained, and verified professionals committed to quality service.",
-  },
-  {
-    icon: TrendingUp,
-    emoji: "✨",
-    title: "Customer Satisfaction",
-    desc: "Reliable, affordable, and timely cleaning services tailored to every customer's needs.",
-  },
+const suchiFeatures = [
+  { icon: Home, emoji: "🏠", title: "Premium Construction", desc: "High-quality residential and commercial developments." },
+  { icon: Leaf, emoji: "🌿", title: "Sustainable Living", desc: "Eco-friendly planning and green infrastructure." },
+  { icon: Star, emoji: "⭐", title: "Customer Satisfaction", desc: "Transparency, trust, and quality service." },
+  { icon: TrendingUp, emoji: "📈", title: "Trusted Growth", desc: "Innovation, excellence, and long-term value." },
 ];
 
 function DomainCard({
@@ -123,7 +103,7 @@ function ServiceCard({ item, i }: { item: Item; i: number }) {
       className="group relative h-full"
     >
       <div className="absolute -inset-[1px] rounded-3xl bg-[var(--gradient-brand)] opacity-30 blur-[2px] group-hover:opacity-80 transition-opacity duration-500" />
-      <div className="relative glass-strong rounded-3xl p-8 min-h-[340px] flex flex-col justify-between overflow-hidden transition-all duration-500">
+      <div className="relative glass-strong rounded-3xl p-7 h-full overflow-hidden">
         <div className="absolute -top-24 -right-24 h-48 w-48 rounded-full bg-[#8b5cf6]/20 blur-3xl group-hover:bg-[#34d5ff]/30 transition-colors duration-700" />
         <motion.div
           whileHover={{ rotate: 6, scale: 1.08 }}
@@ -235,168 +215,99 @@ function Solutions() {
           {/* Technology Solutions */}
 
           {/* SECTION B — About Suchi Homes */}
-         {/* SECTION B — About SUCI Homes */}
-<div className="mt-28">
-  <Reveal>
-    <div className="mb-10">
-      <div className="text-xs uppercase tracking-widest text-[#34d5ff] mb-2">
-        Section A
-      </div>
-      <h3 className="text-2xl md:text-3xl font-bold">
-        About SUCI Homes
-      </h3>
-    </div>
-  </Reveal>
+          <div className="mt-28">
+            <Reveal>
+              <div className="mb-10">
+                <div className="text-xs uppercase tracking-widest text-[#34d5ff] mb-2">Section A</div>
+                <h3 className="text-2xl md:text-3xl font-bold">About Suchi Homes</h3>
+              </div>
+            </Reveal>
 
-  <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* LEFT — Image */}
+              <motion.div
+                initial={{ opacity: 0, x: -60 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                className="relative group"
+              >
+                <div className="absolute -inset-1 rounded-[28px] bg-[var(--gradient-brand)] opacity-40 blur-xl group-hover:opacity-70 transition-opacity duration-700" />
+                <div className="relative overflow-hidden rounded-[24px] shadow-[0_25px_80px_rgba(0,0,0,0.5)]">
+                  <img
+                    src={suchiBuilding}
+                    alt="Suchi Homes premium residential development"
+                    width={1400}
+                    height={1600}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-[#0b0f19]/70 via-transparent to-[#34d5ff]/10 pointer-events-none" />
+                </div>
+              </motion.div>
 
-    {/* LEFT — Image */}
-    <motion.div
-      initial={{ opacity: 0, x: -60 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-      className="relative group"
-    >
-      <div className="absolute -inset-1 rounded-[28px] bg-[var(--gradient-brand)] opacity-40 blur-xl group-hover:opacity-70 transition-opacity duration-700" />
+              {/* RIGHT — Content */}
+              <motion.div
+                initial={{ opacity: 0, x: 60 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <h4 className="text-3xl md:text-4xl font-bold">About Suchi Homes</h4>
+                <div className="mt-3 h-1 w-24 rounded-full bg-[var(--gradient-brand)] shadow-[0_0_20px_rgba(52,213,255,0.6)]" />
+                <p className="mt-6 text-muted-foreground leading-relaxed">
+                  Suchi Homes is committed to creating premium residential and commercial developments that combine innovation, quality, sustainability, and modern architecture. Every project is designed to provide exceptional living experiences while maintaining high construction standards and long-term value.
+                </p>
 
-      <div className="relative overflow-hidden rounded-[24px] shadow-[0_25px_80px_rgba(0,0,0,0.5)]">
+                <div className="mt-8 grid sm:grid-cols-2 gap-5">
+                  <div className="glass rounded-2xl p-5">
+                    <div className="text-xs uppercase tracking-widest text-[#34d5ff] mb-2">Our Vision</div>
+                    <p className="text-sm text-foreground/90 leading-relaxed">
+                      To develop world-class residential communities through innovation, trust, sustainability, and customer-focused excellence.
+                    </p>
+                  </div>
+                  <div className="glass rounded-2xl p-5">
+                    <div className="text-xs uppercase tracking-widest text-[#8b5cf6] mb-2">Our Mission</div>
+                    <p className="text-sm text-foreground/90 leading-relaxed">
+                      To deliver premium-quality homes with modern infrastructure, transparent business practices, and long-term customer satisfaction.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
 
-        <img
-          src={suciBuilding}
-          alt="SUCI Homes Cleaning Services"
-          width={1400}
-          height={1600}
-          loading="lazy"
-          className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-110"
-        />
-
-        <div className="absolute inset-0 bg-gradient-to-tr from-[#0b0f19]/70 via-transparent to-[#34d5ff]/10 pointer-events-none" />
-      </div>
-    </motion.div>
-    {/* RIGHT — Content */}
-<motion.div
-  initial={{ opacity: 0, x: 60 }}
-  whileInView={{ opacity: 1, x: 0 }}
-  viewport={{ once: true, margin: "-80px" }}
-  transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
->
-  <h4 className="text-3xl md:text-4xl font-bold">
-    About SUCI Homes
-  </h4>
-
-  <div className="mt-3 h-1 w-24 rounded-full bg-[var(--gradient-brand)] shadow-[0_0_20px_rgba(52,213,255,0.6)]" />
-
-  <p className="mt-6 text-muted-foreground leading-relaxed">
-    SUCI Homes is a professional home cleaning and maintenance service dedicated
-    to delivering hygienic, reliable, and high-quality cleaning solutions for
-    homes, apartments, villas, offices, and commercial spaces. Our trained
-    professionals use advanced equipment and safe cleaning practices to create
-    clean, healthy, and comfortable living environments while ensuring complete
-    customer satisfaction.
-  </p>
-
-  <div className="mt-8 grid sm:grid-cols-2 gap-5">
-
-    <div className="glass rounded-2xl p-5">
-      <div className="text-xs uppercase tracking-widest text-[#34d5ff] mb-2">
-        Our Vision
-      </div>
-
-      <p className="text-sm text-foreground/90 leading-relaxed">
-        To become the most trusted and preferred home cleaning service provider
-        by delivering exceptional quality, professionalism, innovation, and
-        customer satisfaction.
-      </p>
-    </div>
-
-    <div className="glass rounded-2xl p-5">
-      <div className="text-xs uppercase tracking-widest text-[#8b5cf6] mb-2">
-        Our Mission
-      </div>
-
-      <p className="text-sm text-foreground/90 leading-relaxed">
-        To provide reliable, affordable, eco-friendly, and professional cleaning
-        services through trained experts, advanced cleaning techniques, and a
-        commitment to excellence in every service we deliver.
-      </p>
-    </div>
-
-  </div>
-</motion.div>
-{/* Feature cards */}
-<div className="mt-20">
-
-  <Reveal>
-    <div className="text-center mb-12">
-      <div className="text-xs uppercase tracking-widest text-[#34d5ff] mb-2">
-        SUCI Homes
-      </div>
-
-      <h3 className="text-4xl md:text-5xl font-bold">
-        What <span className="text-gradient">We Offer</span>
-      </h3>
-
-      <p className="mt-4 max-w-2xl mx-auto text-muted-foreground leading-relaxed">
-        Discover our complete range of professional cleaning and maintenance
-        services designed to create healthier, cleaner, and more comfortable
-        living spaces for homes and businesses.
-      </p>
-    </div>
-  </Reveal>
-
-  <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10 items-stretch">
-    {suciFeatures.map((f, i) => (
-      <motion.div
-        key={f.title}
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{
-          duration: 0.6,
-          delay: i * 0.1,
-          ease: [0.22, 1, 0.36, 1],
-        }}
-        whileHover={{ scale: 1.05, y: -8 }}
-        className="group relative"
-      >
-        <div className="absolute -inset-[1px] rounded-3xl bg-[var(--gradient-brand)] opacity-30 blur-[2px] group-hover:opacity-80 transition-opacity duration-500" />
-
-        <div className="relative glass-strong rounded-3xl p-8 min-h-[340px] flex flex-col justify-between overflow-hidden transition-all duration-500">
-
-          <div className="absolute -top-20 -right-20 h-40 w-40 rounded-full bg-[#34d5ff]/20 blur-3xl group-hover:bg-[#8b5cf6]/30 transition-colors duration-700" />
-
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <span className="text-3xl">{f.emoji}</span>
-            <f.icon size={24} className="text-[#34d5ff]" />
+            {/* Feature cards */}
+            <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {suchiFeatures.map((f, i) => (
+                <motion.div
+                  key={f.title}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                  whileHover={{ scale: 1.05, y: -6 }}
+                  className="group relative"
+                >
+                  <div className="absolute -inset-[1px] rounded-2xl bg-[var(--gradient-brand)] opacity-30 blur-[2px] group-hover:opacity-80 transition-opacity duration-500" />
+                  <div className="relative glass-strong rounded-2xl p-6 h-full overflow-hidden">
+                    <div className="absolute -top-16 -right-16 h-32 w-32 rounded-full bg-[#34d5ff]/15 blur-2xl group-hover:bg-[#8b5cf6]/30 transition-colors duration-700" />
+                    <div className="relative flex items-center gap-3 mb-3">
+                      <span className="text-2xl">{f.emoji}</span>
+                      <f.icon size={20} className="text-[#34d5ff]" />
+                    </div>
+                    <h5 className="relative font-semibold text-base mb-2">{f.title}</h5>
+                    <p className="relative text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
 
-          <h4 className="text-lg font-semibold mb-3">
-            {f.title}
-          </h4>
-
-          <p className="text-sm text-muted-foreground leading-7 flex-1">
-             {f.desc}
-          </p>
+          <Reveal className="mt-16 text-center">
+            <GradientButton to="/contact">Discuss Your Project</GradientButton>
+          </Reveal>
         </div>
-      </motion.div>
-    ))}
-  </div>
-
-</div>
- 
-</div>
-
-</div>      {/* closes mt-28 */}
-          
-<Reveal className="mt-16 text-center">
-  <GradientButton to="/contact">
-    Discuss Your Project
-  </GradientButton>
-</Reveal>
-
-</div>
-</section>
-</div>
-);
+      </section>
+    </div>
+  );
 }
