@@ -123,7 +123,7 @@ function ServiceCard({ item, i }: { item: Item; i: number }) {
       className="group relative h-full"
     >
       <div className="absolute -inset-[1px] rounded-3xl bg-[var(--gradient-brand)] opacity-30 blur-[2px] group-hover:opacity-80 transition-opacity duration-500" />
-      <div className="relative glass-strong rounded-3xl p-7 h-full overflow-hidden">
+      <div className="relative glass-strong rounded-3xl p-8 min-h-[340px] flex flex-col justify-between overflow-hidden transition-all duration-500">
         <div className="absolute -top-24 -right-24 h-48 w-48 rounded-full bg-[#8b5cf6]/20 blur-3xl group-hover:bg-[#34d5ff]/30 transition-colors duration-700" />
         <motion.div
           whileHover={{ rotate: 6, scale: 1.08 }}
@@ -345,7 +345,7 @@ function Solutions() {
     </div>
   </Reveal>
 
-  <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+  <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10 items-stretch">
     {suciFeatures.map((f, i) => (
       <motion.div
         key={f.title}
@@ -362,11 +362,11 @@ function Solutions() {
       >
         <div className="absolute -inset-[1px] rounded-3xl bg-[var(--gradient-brand)] opacity-30 blur-[2px] group-hover:opacity-80 transition-opacity duration-500" />
 
-        <div className="relative glass-strong rounded-3xl p-7 h-full overflow-hidden">
+        <div className="relative glass-strong rounded-3xl p-8 min-h-[340px] flex flex-col justify-between overflow-hidden transition-all duration-500">
 
           <div className="absolute -top-20 -right-20 h-40 w-40 rounded-full bg-[#34d5ff]/20 blur-3xl group-hover:bg-[#8b5cf6]/30 transition-colors duration-700" />
 
-          <div className="flex items-center gap-3 mb-5">
+          <div className="flex items-center justify-center gap-3 mb-6">
             <span className="text-3xl">{f.emoji}</span>
             <f.icon size={24} className="text-[#34d5ff]" />
           </div>
@@ -375,8 +375,8 @@ function Solutions() {
             {f.title}
           </h4>
 
-          <p className="text-sm text-muted-foreground leading-relaxed">
-            {f.desc}
+          <p className="text-sm text-muted-foreground leading-7 flex-1">
+             {f.desc}
           </p>
         </div>
       </motion.div>
