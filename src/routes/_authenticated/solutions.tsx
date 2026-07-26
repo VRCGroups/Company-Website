@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { Reveal, GradientButton, Blobs } from "../../components/ui";
-import suciBuilding from "@/assets/suci-homes.jpg";
+import suciBuilding from "@/assets/suchi-homes.jpg";
 
 export const Route = createFileRoute("/_authenticated/solutions")({
   head: () => ({
