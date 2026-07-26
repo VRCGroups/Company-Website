@@ -233,12 +233,12 @@ function Solutions() {
           {/* SECTION A — Technology Solutions */}
           {/* Technology Solutions */}
 
-          {/* SECTION B — About Suci Homes */}
+          {/* SECTION B —  Suci Homes */}
           <div className="mt-28">
             <Reveal>
               <div className="mb-10">
                 <div className="text-xs uppercase tracking-widest text-[#34d5ff] mb-2">Section A</div>
-                <h3 className="text-2xl md:text-3xl font-bold">About Suci Homes</h3>
+                <h3 className="text-2xl md:text-3xl font-bold">Suci Homes</h3>
               </div>
             </Reveal>
 
