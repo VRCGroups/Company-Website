@@ -40,12 +40,29 @@ function Contact() {
     const form = e.currentTarget;
     const formData = new FormData(form);
 
-    const name = formData.get("name") as string;
-    const email = formData.get("email") as string;
-    const phone = formData.get("phone") as string;
-    const service_interest = formData.get("service") as string;
-    const message = formData.get("message") as string;
+    const name = (formData.get("name") as string).trim();
+const email = (formData.get("email") as string).trim();
+const phone = (formData.get("phone") as string).trim();
+const service_interest = formData.get("service") as string;
+const message = (formData.get("message") as string).trim();
 
+// Phone validation
+const phoneRegex = /^[0-9]{10}$/;
+
+if (!phoneRegex.test(phone)) {
+  alert("Phone number must contain exactly 10 digits.");
+  setLoading(false);
+  return;
+}
+
+// Email validation
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+if (!emailRegex.test(email)) {
+  alert("Please enter a valid email address.");
+  setLoading(false);
+  return;
+}
     try {
       const { error } = await supabase.from("contacts").insert([
         {
@@ -132,8 +149,18 @@ function Contact() {
 
                 <div className="grid md:grid-cols-2 gap-4 relative">
                   <Field label="Name" name="name" required />
-                  <Field label="Email" name="email" type="email" required />
-                  <Field label="Phone" name="phone" type="tel" />
+                  <Field
+  label="Email"
+  name="email"
+  type="email"
+  required
+/>
+                  <Field
+  label="Phone"
+  name="phone"
+  type="tel"
+  required
+/>
                   <div>
                     <label className="text-xs uppercase tracking-widest text-muted-foreground">Service</label>
                     <select
@@ -189,16 +216,40 @@ function Contact() {
   );
 }
 
-function Field({ label, name, type = "text", required = false }: { label: string; name: string; type?: string; required?: boolean }) {
+function Field({
+  label,
+  name,
+  type = "text",
+  required = false,
+}: {
+  label: string;
+  name: string;
+  type?: string;
+  required?: boolean;
+}) {
+  const isPhone = name === "phone";
+
   return (
     <div>
-      <label className="text-xs uppercase tracking-widest text-muted-foreground">{label}</label>
+      <label className="text-xs uppercase tracking-widest text-muted-foreground">
+        {label}
+      </label>
+
       <input
         type={type}
         name={name}
         required={required}
-        className="mt-2 w-full glass rounded-xl px-4 py-3 text-sm outline-none focus:border-[#34d5ff] transition-colors"
         placeholder={label}
+        maxLength={isPhone ? 10 : undefined}
+        pattern={isPhone ? "[0-9]{10}" : undefined}
+        onInput={
+          isPhone
+            ? (e) => {
+                e.currentTarget.value = e.currentTarget.value.replace(/\D/g, "");
+              }
+            : undefined
+        }
+        className="mt-2 w-full glass rounded-xl px-4 py-3 text-sm outline-none focus:border-[#34d5ff] transition-colors"
       />
     </div>
   );
