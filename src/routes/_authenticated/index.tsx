@@ -1,8 +1,70 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { Sparkles, Users, FlaskConical, ShieldCheck, Rocket, Cpu, Cloud, Bot, ArrowRight } from "lucide-react";
-import { Reveal, GradientButton, SectionHeader, Blobs, GlassCard } from "../../components/ui";
-import { Particles } from "../../components/Particles";
+import {
+  Sparkles,
+  Users,
+  FlaskConical,
+  ShieldCheck,
+  Rocket,
+  ArrowRight,
+} from "lucide-react";
+
+import {
+  Reveal,
+  GradientButton,
+  SectionHeader,
+  Blobs,
+  GlassCard,
+} from "../../components/ui";
+const values = [
+  {
+    icon: Sparkles,
+    title: "Innovation",
+    text: "We push boundaries with future-first thinking.",
+  },
+  {
+    icon: FlaskConical,
+    title: "Research",
+    text: "Deep research drives every solution we ship.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Quality",
+    text: "Enterprise-grade craftsmanship in every line.",
+  },
+  {
+    icon: Rocket,
+    title: "Discipline",
+    text: "Precise execution from concept to launch.",
+  },
+];
+
+const whyUs = [
+  {
+    icon: Sparkles,
+    title: "Innovation",
+    text: "Cutting-edge tech engineered for tomorrow's problems.",
+    gradient: "from-[#34d5ff] to-[#5eb8ff]",
+  },
+  {
+    icon: Users,
+    title: "Customer First",
+    text: "Your success is the metric we optimize for.",
+    gradient: "from-[#8b5cf6] to-[#c084fc]",
+  },
+  {
+    icon: FlaskConical,
+    title: "Research Driven",
+    text: "Every product built on rigorous R&D foundations.",
+    gradient: "from-[#34d5ff] to-[#8b5cf6]",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Secure Solutions",
+    text: "Security-first architecture, zero compromises.",
+    gradient: "from-[#8b5cf6] to-[#34d5ff]",
+  },
+];
 
 export const Route = createFileRoute("/_authenticated/")({
   head: () => ({
@@ -14,29 +76,15 @@ export const Route = createFileRoute("/_authenticated/")({
   component: Home,
 });
 
-const values = [
-  { icon: Sparkles, title: "Innovation", text: "We push boundaries with future-first thinking." },
-  { icon: FlaskConical, title: "Research", text: "Deep research drives every solution we ship." },
-  { icon: ShieldCheck, title: "Quality", text: "Enterprise-grade craftsmanship in every line." },
-  { icon: Rocket, title: "Discipline", text: "Precise execution from concept to launch." },
-];
-
-const whyUs = [
-  { icon: Sparkles, title: "Innovation", text: "Cutting-edge tech engineered for tomorrow's problems.", gradient: "from-[#34d5ff] to-[#5eb8ff]" },
-  { icon: Users, title: "Customer First", text: "Your success is the metric we optimize for.", gradient: "from-[#8b5cf6] to-[#c084fc]" },
-  { icon: FlaskConical, title: "Research Driven", text: "Every product built on rigorous R&D foundations.", gradient: "from-[#34d5ff] to-[#8b5cf6]" },
-  { icon: ShieldCheck, title: "Secure Solutions", text: "Security-first architecture, zero compromises.", gradient: "from-[#8b5cf6] to-[#34d5ff]" },
-];
-
 function Home() {
   return (
-    <div>
+    <div className="w-full max-w-6xl mx-auto text-center flex flex-col items-center">
       {/* HERO */}
       <section className="relative min-h-[92vh] flex items-center overflow-hidden">
 
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,rgba(52,213,255,0.08),transparent_70%)]" />
-
-        <div className="mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-12 items-center py-20">
+        <div className="mx-auto max-w-6xl px-6 flex justify-center items-center py-16">
+        
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -52,18 +100,16 @@ function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.05]"
+              className="mx-auto max-w-4xl text-3xl md:text-5xl lg:text-6xl font-bold leading-[1.15] text-center"
             >
-              Building <span className="text-gradient animate-gradient">Future-Ready</span> Technology
-              <br />
-              for Real-World <span className="text-gradient animate-gradient">Innovation</span>
+              Building <span className="text-gradient animate-gradient">Future-Ready</span> Technology for Real-World <span className="text-gradient animate-gradient">Innovation</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.25 }}
-              className="mt-7 text-lg text-muted-foreground max-w-xl leading-relaxed"
+              className="mt-6 max-w-2xl mx-auto text-lg md:text-xl leading-8 text-muted-foreground text-center"
             >
               We build innovative software, AI solutions, IoT systems, intelligent automation, and research-driven technologies that shape what's next.
             </motion.p>
@@ -72,7 +118,7 @@ function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="mt-9 flex flex-wrap gap-4"
+              className="mt-10 flex justify-center items-center gap-5 flex-wrap"
             >
               <GradientButton to="/solutions">Explore Solutions</GradientButton>
               <GradientButton to="/contact" variant="secondary">Contact Us</GradientButton>
@@ -80,39 +126,7 @@ function Home() {
 
           </div>
 
-          {/* Hero visual */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="relative hidden lg:block"
-          >
-            <div className="relative animate-float">
-              <div className="absolute inset-0 bg-[var(--gradient-brand)] blur-3xl opacity-40 rounded-full" />
-              <div className="relative glass-strong rounded-3xl p-8 shadow-[var(--shadow-glow)]">
-                <div className="grid grid-cols-2 gap-4">
-                  {[Bot, Cpu, Cloud, Rocket].map((Icon, i) => (
-                    <motion.div
-                      key={i}
-                      animate={{ y: [0, -10, 0] }}
-                      transition={{ duration: 4 + i, repeat: Infinity, delay: i * 0.3 }}
-                      className="aspect-square glass rounded-2xl grid place-items-center hover:border-[#34d5ff]/50 transition-all"
-                    >
-                      <Icon size={40} className="text-[#34d5ff]" />
-                    </motion.div>
-                  ))}
-                </div>
-                <div className="mt-6 h-2 rounded-full bg-white/5 overflow-hidden">
-                  <motion.div
-                    animate={{ x: ["-100%", "100%"] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                    className="h-full w-1/2 bg-[var(--gradient-brand)]"
-                  />
-                </div>
-                <div className="mt-4 text-xs text-muted-foreground font-mono">// deploying_intelligence.exe</div>
-              </div>
-            </div>
-          </motion.div>
+     
         </div>
       </section>
 
@@ -180,7 +194,7 @@ function Home() {
             <div className="relative glass-strong rounded-3xl p-12 md:p-16 text-center overflow-hidden">
               <div className="absolute inset-0 bg-[var(--gradient-brand)] opacity-10" />
               <div className="absolute -top-40 left-1/2 -translate-x-1/2 h-80 w-80 rounded-full bg-[#34d5ff]/30 blur-3xl" />
-              <h2 className="relative text-3xl md:text-5xl font-bold leading-tight">
+              <h2 className="relative text-3xl md:text-4xl font-bold leading-tight">
                 Ready to build something <span className="text-gradient">extraordinary</span>?
               </h2>
               <p className="relative mt-5 text-muted-foreground max-w-xl mx-auto">
